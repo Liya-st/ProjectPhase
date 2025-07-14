@@ -3,10 +3,21 @@ package main
 import (
 	"fmt"
 	"strings"
+	"unicode"
 )
+func clean_str(str string) string{
+	cleaned := ""
+	lower := strings.ToLower((str))
+	for _ , char := range(lower){
+				if unicode.IsDigit(char) || unicode.IsLetter(char)|| unicode.IsSpace(char){
+				cleaned +=string(char)
+				}
 
+	}
+	return cleaned
+}
 func wordCount(word string) map[string] int{
-	new := strings.ToLower((word))
+	new := clean_str(word)
 	split := strings.Split(new, " ")
 	dic := map[string] int{}
 
@@ -18,8 +29,10 @@ func wordCount(word string) map[string] int{
 }
 
 func palindrome(str string) bool{
-	new_str := strings.ToLower(str)
-	n := len(str)
+	temp := clean_str(str)
+	new_str := strings.ReplaceAll(temp, " ", "")
+
+	n := len(new_str)
 	for i:= 0; i < n/2; i++ {
 		if new_str[i] != new_str[n-i-1] {
 			return false
