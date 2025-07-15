@@ -22,4 +22,9 @@ This project is for learning backend development concepts such as:
 
 ---
 
+## 🧪 How to Run
+Make sure Go is installed. Then run:
 
+```bash
+go run main.go
+```
