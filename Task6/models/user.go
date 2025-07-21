@@ -7,6 +7,13 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
+type Role string
+
+const (
+    AdminRole Role = "admin"
+    UserRole  Role = "user"
+)
+
 type User struct {
     ID        primitive.ObjectID `bson:"_id,omitempty" json:"id"`
     Username  string             `json:"username" validate:"required"`
