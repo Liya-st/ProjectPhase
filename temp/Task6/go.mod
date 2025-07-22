@@ -5,9 +5,7 @@ go 1.24.4
 require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gin-gonic/gin v1.10.1
-	github.com/go-playground/validator/v10 v10.20.0
-	github.com/golang-jwt/jwt/v4 v4.5.2
-	github.com/joho/godotenv v1.5.1
+	github.com/google/uuid v1.6.0
 	go.mongodb.org/mongo-driver v1.17.4
 	golang.org/x/crypto v0.26.0
 )
@@ -21,6 +19,7 @@ require (
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
+	github.com/go-playground/validator/v10 v10.20.0 // indirect
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
