@@ -3,7 +3,6 @@ package middleware
 import (
 	"errors"
 	"net/http"
-	"os"
 	"strings"
 	"task_manager/data"
 	"task_manager/models"
@@ -32,7 +31,7 @@ func AuthMiddleware(userService *data.UserService) gin.HandlerFunc {
 			if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 				return nil, errors.New("invalid signing method")
 			}
-			return []byte(os.Getenv("JWT_SECRET")), nil
+			return []byte("JWT_SECRET"), nil
 		})
 
 		if err != nil || !token.Valid {

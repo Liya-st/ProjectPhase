@@ -22,7 +22,7 @@ type UserService struct {
 func NewUserService(db *mongo.Database) *UserService {
 	return &UserService{
 		collection: db.Collection("users"),
-		secretKey:  os.Getenv("JWT_SECRET"),
+		secretKey:  "JWT_SECRET",
 	}
 }
 
